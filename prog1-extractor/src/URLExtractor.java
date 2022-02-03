@@ -48,8 +48,13 @@ public class URLExtractor {
 			//System.out.println(inputLine); for testing purposes
 			writer.write(inputLine+"\n");					//outputting each line to file
 		}
+		
 		reader.close();
 		writer.close();
+		
+		BufferedWriter writer2 = new BufferedWriter(new FileWriter("Assignment1Data.txt"));		//output statistics
+		writer2.write("Line Count: "+lineCount+"\nWord Count: "+wordCount+"\nCharacter Count: "+charCount);
+		writer2.close();
 		
 		System.out.println("Output file created in data folder."+"\n");
 		System.out.println("Line Count: "+lineCount+"\nWord Count: "+wordCount+"\nCharacter Count: "+charCount);

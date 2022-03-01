@@ -17,3 +17,7 @@ class OutlookHeaderType: public BaseEmailHeaderType{
     public:
 
 };
+
+int main(){
+    return 1;
+}

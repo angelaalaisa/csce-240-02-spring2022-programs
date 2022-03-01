@@ -4,10 +4,10 @@
 
 import java.util.Scanner;
 import java.io.*;
-import java.io.FileWriter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.*;
+import java.io.FileWriter;
 
 public class InfoProcessor {
 	
@@ -16,9 +16,10 @@ public class InfoProcessor {
 		String region;
 		String colaAddress;
 		String homeAddress;
-		String busiPhone;
+		String busiColaPhone;
+		String busiHomePhone;
 		String homePhone;
-		List<String> personalInfo;		//a list to hold personal info since the number of info is not known	
+		List<String> personalInfo = new ArrayList<String>();		//a list to hold personal info since the number of info is not known	
 
 
 	public static void main(String[] args) {
@@ -44,7 +45,7 @@ public class InfoProcessor {
 			//get user info input
 			String type = keyboard.nextLine();
 			try {
-				info.readFile(type);
+				info.readWriteFile(type);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -55,50 +56,78 @@ public class InfoProcessor {
 		
 	}
 	
-	
-	public void readFile(String type) throws Exception{
+	public void readWriteFile(String type) throws Exception{
 		
 		int addressCount = 0;
+		int phoneCount = 0;
 		
 		//Regex patterns for types of info
-		Pattern nameP = Pattern.compile("(?<=Representative\\s)[A-Za-z.\\s]+\\<");
-		Pattern regionP = Pattern.compile("[a-zA-z]+(?=(\\sCounty))");
-		Pattern addressP = Pattern.compile("(?<=\\>)\\d+([a-zA-Z\\s.])+");
-		Pattern cityP = Pattern.compile("(?<=\\>)[a-zA-Z]+\\s\\d+");
+		Pattern nameP = Pattern.compile("(?<=Representative\\s)([A-Za-z.]+\\s[A-Za-z.]+\\s[A-Za-z.]+\\s)");
+		Pattern regionP = Pattern.compile("([A-Za-z]+)(?=(\\sCounty))");
+		Pattern addressP = Pattern.compile("(?<=\\>)(\\d+[a-zA-Z\\s.]+)(\\<br\\>)([A-Za-z\\s]+\\d+)");
 		Pattern phoneP = Pattern.compile("\\(\\d\\d\\d\\)\\s\\d\\d\\d-\\d\\d\\d\\d");
-		Pattern personalP = Pattern.compile("\\>[a-zA-z0-9\\s\\.\\,]+");
-		
+		Pattern personalP = Pattern.compile("(<li style=\"margin: 5px 0 0 0; list-style-type:square;\" >)([a-zA-z0-9\\s\\\\.\\,\\-\\\"\\/\\']+)");
 		
 		
 		BufferedReader reader = new BufferedReader(new FileReader("document.txt"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("test_output.txt"));
+
 		String line;
 		while ((line = reader.readLine()) != null) {
 			
 			Matcher a = nameP.matcher(line);
 			if(a.find()) {
 				name = a.group();
-				System.out.println("Name: "+name);
 			}
 			
 			Matcher b = regionP.matcher(line);
 			if(b.find()) {
 				region = b.group();
-				System.out.println("Region: "+region);
 			}
 		
 			Matcher c = addressP.matcher(line);
 			if(c.find()) {
 				addressCount++;
 				if(addressCount == 1) {
-					colaAddress = c.group();
+					colaAddress = c.group(1) + " " + c.group(3);
 				}
 				else if(addressCount == 2) {
-					homeAddress = c.group();
+					homeAddress = c.group(1) + " " + c.group(3);
 				}
 			}
 			
+			Matcher d = phoneP.matcher(line);
+			if(d.find()) {
+				String phone = d.group();
+				if(line.contains("Home Phone"))
+					homePhone = phone;
+				else if(line.contains("Business Phone") && phoneCount==0) {
+					phoneCount++;
+					busiColaPhone = phone;
+				}
+				else if(line.contains("Business Phone") && phoneCount==1)
+					busiHomePhone = phone;
+			}
+			
+			Matcher e = personalP.matcher(line);
+			if(e.find()) {
+				personalInfo.add(e.group(2));			}
 		}
+		
+		System.out.println("Data extracted to output file");
+		
+		//writing contents to file
+		writer.write("Name: " + name + "\n");
+		writer.write("Region: " + region + "\n");
+		writer.write("Columbia Address: " + colaAddress + "\n");
+		writer.write("\tBusiness Phone: " + busiColaPhone + "\n");
+		writer.write("Home Address: " + homeAddress + "\n");
+		writer.write("\tBusiness Phone: " + busiHomePhone + "\n");
+		writer.write("\tHome Phone: " + homePhone + "\n");
+		//writer.write(personalInfo.toString());
+		
 		reader.close();
+		writer.close();
 		getContents(type);	
 	}
 	

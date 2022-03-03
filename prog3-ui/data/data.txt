@@ -1,0 +1,1 @@
+This program does not extract data from any files

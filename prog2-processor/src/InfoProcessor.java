@@ -26,7 +26,7 @@ public class InfoProcessor {
 		String votingRecord = "Voting records are found in a separate link. Data retrieval is still in progress";
 
 
-	public static void main(String[] args) {			//removed static
+	public static void main(String[] args) {			
 		
 		InfoProcessor info = new InfoProcessor();
 		

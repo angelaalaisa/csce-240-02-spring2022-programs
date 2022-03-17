@@ -43,8 +43,8 @@ void factorial(int num){
 
 void getFunction(string input){ 
     
-    regex regex1("([0-9])\\s([0-9])");   // input has two numbers
-    regex regex2("([0-9])");            // input has one number
+    regex regex1("([0-9]+)\\s([0-9]+)");   // input has two numbers
+    regex regex2("([0-9]+)");            // input has one number
     smatch match;
     
     if(regex_match(input, match, regex1)) {

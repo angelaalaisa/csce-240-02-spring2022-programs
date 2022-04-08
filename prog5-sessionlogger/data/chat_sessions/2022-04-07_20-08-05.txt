@@ -1,0 +1,16 @@
+User Query: where does he work
+System Response: 335B Blatt Bldg. Columbia 29201
+User Query: what is his name
+System Response: J. Todd Rutherford 
+User Query: what
+System Response: none
+User Query: which party is he in
+System Response: Democrat
+User Query: lol
+System Response: none
+User Query: no
+System Response: none
+User Query: leave
+System Response: none
+
+Total session duration: 64 seconds

@@ -1,0 +1,18 @@
+User Query: hello
+System Response: none
+User Query: which region does he legislate
+System Response: Richland
+User Query: what committees is he on
+System Response: has not been assigned to any committees yet
+User Query: what is his voting record
+System Response: Voting records are found in a separate link. Data retrieval is still in progress
+User Query: name
+System Response: J. Todd Rutherford 
+User Query: give me rep
+System Response: none
+User Query: representative
+System Response: none
+User Query: who is the representative
+System Response: J. Todd Rutherford 
+
+Total session duration: 96 seconds

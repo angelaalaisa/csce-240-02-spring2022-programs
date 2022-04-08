@@ -1,0 +1,34 @@
+Apr 07, 2022 8:11:14 PM SessionLogger main
+INFO: hello
+Apr 07, 2022 8:11:14 PM SessionLogger answerQuery
+INFO: none
+Apr 07, 2022 8:12:01 PM SessionLogger main
+INFO: which region does he legislate
+Apr 07, 2022 8:12:01 PM SessionLogger answerQuery
+INFO: Richland
+Apr 07, 2022 8:12:12 PM SessionLogger main
+INFO: what committees is he on
+Apr 07, 2022 8:12:12 PM SessionLogger answerQuery
+INFO: has not been assigned to any committees yet
+Apr 07, 2022 8:12:18 PM SessionLogger main
+INFO: what is his voting record
+Apr 07, 2022 8:12:18 PM SessionLogger answerQuery
+INFO: Voting records are found in a separate link. Data retrieval is still in progress
+Apr 07, 2022 8:12:22 PM SessionLogger main
+INFO: name
+Apr 07, 2022 8:12:22 PM SessionLogger answerQuery
+INFO: J. Todd Rutherford 
+Apr 07, 2022 8:12:25 PM SessionLogger main
+INFO: give me rep
+Apr 07, 2022 8:12:25 PM SessionLogger answerQuery
+INFO: none
+Apr 07, 2022 8:12:28 PM SessionLogger main
+INFO: representative
+Apr 07, 2022 8:12:28 PM SessionLogger answerQuery
+INFO: none
+Apr 07, 2022 8:12:40 PM SessionLogger main
+INFO: who is the representative
+Apr 07, 2022 8:12:40 PM SessionLogger answerQuery
+INFO: J. Todd Rutherford 
+Apr 07, 2022 8:12:48 PM SessionLogger main
+INFO: Quit

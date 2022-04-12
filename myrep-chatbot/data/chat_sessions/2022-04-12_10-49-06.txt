@@ -1,0 +1,34 @@
+User Query: 
+	which district is this rep
+System Response: 
+	District74, Richland
+User Query: 
+	what is his name
+System Response: 
+	J. Todd Rutherford 
+User Query: 
+	which party is he a part of
+System Response: 
+	Democrat
+User Query: 
+	what is the district number
+System Response: 
+	Home Address: 
+2113 Park Street Columbia 29201
+	Home Phone: (803) 799-8633
+	Business Phone: (803) 256-3003
+Columbia Address:
+335B Blatt Bldg. Columbia 29201
+	Business Phone: (803) 734-9441
+User Query: 
+	how do i contact them
+System Response: 
+	Home Address: 
+2113 Park Street Columbia 29201
+	Home Phone: (803) 799-8633
+	Business Phone: (803) 256-3003
+Columbia Address:
+335B Blatt Bldg. Columbia 29201
+	Business Phone: (803) 734-9441
+
+Total session duration: 120 seconds

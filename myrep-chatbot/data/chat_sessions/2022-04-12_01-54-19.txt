@@ -1,0 +1,25 @@
+User Query: 
+	how old is he
+System Response: 
+	none
+User Query: 
+	where does he work
+System Response: 
+	335B Blatt Bldg. Columbia 29201
+User Query: 
+	give me everything
+System Response: 
+	Name: J. Todd Rutherford 
+Party: Democrat
+District: 74
+County: Richland
+Business Address: 335B Blatt Bldg. Columbia 29201
+Home Address: 2113 Park Street Columbia 29201
+Personal Info:
+[Attorney, Residing at 2321 Lincoln St., Columbia, Born October 10, 1970 in Columbia, Son of Harry and Karen Rutherford, Howard University, B.A., 1992, University of South Carolina, J.D., 1996, 2 children, J. Todd II "Ty" and Tripp Benjamin, Legislative Assistant, Congressman Robin Tallon, 1992-93, Owner, 3 Tech Integrated Systems, 1993, Assistant Solicitor/Special Prosecutor of Narcotic and Drug Cases, Fifth Solicitor's Office, 1996-98, The Rutherford Law Firm, LLC, 1998-11, Owner, 803 Trucking, LLC, WasteSouth, LLC, T.I.S. Consulting and Auto, National Board member, NAACP Special Contributions Fund, Board Member, Brookland Baptist Church Community Credit Union, 1999, Member, South Carolina Bar Association, House of Representatives, 1999 - Present, Attorney, Residing at 2321 Lincoln St., Columbia, Born October 10, 1970 in Columbia, Son of Harry and Karen Rutherford, Howard University, B.A., 1992, University of South Carolina, J.D., 1996, 2 children, J. Todd II "Ty" and Tripp Benjamin, Legislative Assistant, Congressman Robin Tallon, 1992-93, Owner, 3 Tech Integrated Systems, 1993, Assistant Solicitor/Special Prosecutor of Narcotic and Drug Cases, Fifth Solicitor's Office, 1996-98, The Rutherford Law Firm, LLC, 1998-11, Owner, 803 Trucking, LLC, WasteSouth, LLC, T.I.S. Consulting and Auto, National Board member, NAACP Special Contributions Fund, Board Member, Brookland Baptist Church Community Credit Union, 1999, Member, South Carolina Bar Association, House of Representatives, 1999 - Present, Attorney, Residing at 2321 Lincoln St., Columbia, Born October 10, 1970 in Columbia, Son of Harry and Karen Rutherford, Howard University, B.A., 1992, University of South Carolina, J.D., 1996, 2 children, J. Todd II "Ty" and Tripp Benjamin, Legislative Assistant, Congressman Robin Tallon, 1992-93, Owner, 3 Tech Integrated Systems, 1993, Assistant Solicitor/Special Prosecutor of Narcotic and Drug Cases, Fifth Solicitor's Office, 1996-98, The Rutherford Law Firm, LLC, 1998-11, Owner, 803 Trucking, LLC, WasteSouth, LLC, T.I.S. Consulting and Auto, National Board member, NAACP Special Contributions Fund, Board Member, Brookland Baptist Church Community Credit Union, 1999, Member, South Carolina Bar Association, House of Representatives, 1999 - Present]
+Committee Assignments: no past or current assignments
+Sponsored bills: in another webpage section, currently unavailable
+Voting Record: in another webpage section, currently unavailable
+Service in Public Office: House of Representatives, 1999 - Present
+
+Total session duration: 12 seconds

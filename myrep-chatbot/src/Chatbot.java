@@ -30,8 +30,8 @@ public class Chatbot {
 		String busiHomePhone;
 		String homePhone;
 		List<String> serviceInfo = new ArrayList<String>();
-		List<String> personalInfo = new ArrayList<String>();		//a list to hold personal info since the number of info is not known	
-		String committeeAssign = "Has not been assigned to any committees yet";
+		List<String> personalInfo = new ArrayList<String>();		//a list to hold personal info since the number of info is not known
+		List<String> committeeAssign = new ArrayList<String>();
 		String sponsoredBills = "Sponsored bills are found in a separate link. Data retrieval is still in progress";
 		String votingRecord = "Voting records are found in a separate link. Data retrieval is still in progress";
 		String party;
@@ -124,7 +124,7 @@ public class Chatbot {
 				else if(query.contains("showchat") || query.contains("summary")) {						//print all user queries and system responses
 					
 					File folder = new File("data/chat_sessions");								//get total chat count
-					File[] chatFiles = folder.listFiles(); 										
+					File[] chatFiles = folder.listFiles(); 										//lines 126 to 130 were reused from Darshan Patel's PA5 code
 					for(int i = 0; i<chatFiles.length; i++) {
 						info.chatCount++;
 					}
@@ -176,6 +176,7 @@ public class Chatbot {
 			Pattern phoneP = Pattern.compile("\\(\\d\\d\\d\\)\\s\\d\\d\\d-\\d\\d\\d\\d");
 			Pattern personalP = Pattern.compile("(<li style=\"margin: 5px 0 0 0; list-style-type:square;\" >)([a-zA-z0-9\\s\\\\.\\,\\-\\\"\\/\\']+)");
 			Pattern serviceP = Pattern.compile("^(<li style=\\\"margin: 5px 0 0 0; list-style-type:square;\\\" >)([A-Za-z\\d\\s]+\\,\\s)(\\d\\d\\d\\d\\s\\-\\s[A-Za-z\\d]+)+(<\\/li><\\/ul>)");
+			Pattern committeeP = Pattern.compile("HREF=\"\\/committee\\.php\\?chamber=H#[a-z]*\">([A-Za-z\\s]+)");
 			
 			//new patterns
 			Pattern partyP = Pattern.compile("<p style=\"font-size: 17px; margin: 0 0 0 0; padding: 0;\">([A-Za-z]+)\\s-\\s[A-Za-z]+<\\/p>");
@@ -245,6 +246,18 @@ public class Chatbot {
 				if(h.find()) {
 					districtNum = h.group(1);
 				}
+				
+				if(line.contains("HREF=\"/committee.php?chamber=H#")){
+					String[] comSplit = line.split("</a></li>");
+					for(int i=0; i<comSplit.length; i++) {
+						Matcher j = committeeP.matcher(comSplit[i]);
+						if(j.find()) {
+							committeeAssign.add(j.group(1));
+						}
+					}
+				}
+				
+				
 			}
 		}
 		
@@ -331,8 +344,15 @@ public class Chatbot {
 			}
 			
 			Matcher j = committeeP.matcher(line);
-			if(j.find())
-				output = "has not been assigned to any committees yet";
+			if(j.find()) {
+				
+				StringBuilder sb = new StringBuilder();
+				for(int y = 0; y<committeeAssign.size(); y++) {
+					sb.append("\t"+committeeAssign.get(y)+"\n");
+				}
+				output = sb.toString();
+				
+			}
 			
 			Matcher k = billsP.matcher(line);
 			if(k.find())
@@ -361,7 +381,7 @@ public class Chatbot {
 						+ "\nBusiness Address: " + colaAddress
 						+ "\nHome Address: " + homeAddress
 						+ "\nPersonal Info:\n" + personalInfo.toString()
-						+ "\nCommittee Assignments: no past or current assignments"
+						+ "\nCommittee Assignments:\n " + committeeAssign.toString()
 						+ "\nSponsored bills: in another webpage section, currently unavailable"
 						+ "\nVoting Record: in another webpage section, currently unavailable"
 						+ "\nService in Public Office: House of Representatives, 1999 - Present";

@@ -83,10 +83,10 @@ public class Chatbot {
 			
 			long startTime = System.nanoTime();								//start timer			
 			
+			info.readFileContents();									//read file contents
 			
 			while(exitProg != "yes") {
 				
-				info.readFileContents();									//read file contents
 				
 				System.out.println("Enter query below\n(type \"Quit\", \"quit\", or \"q\" to exit the program.)");
 				
